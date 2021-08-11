@@ -1,0 +1,31 @@
+# InlineResponse200
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**version** | **String** |  |  [optional]
+**buildTime** | **String** |  |  [optional]
+**isDebug** | **Boolean** |  |  [optional]
+**isProduction** | **Boolean** |  |  [optional]
+**isAdmin** | **Boolean** |  |  [optional]
+**isUserInteractive** | **Boolean** |  |  [optional]
+**startupPath** | **String** |  |  [optional]
+**appData** | **String** |  |  [optional]
+**osName** | **String** |  |  [optional]
+**osVersion** | **String** |  |  [optional]
+**isNetCore** | **Boolean** |  |  [optional]
+**isMono** | **Boolean** |  |  [optional]
+**isLinux** | **Boolean** |  |  [optional]
+**isOsx** | **Boolean** |  |  [optional]
+**isWindows** | **Boolean** |  |  [optional]
+**isDocker** | **Boolean** |  |  [optional]
+**mode** | **String** |  |  [optional]
+**branch** | **String** |  |  [optional]
+**authentication** | **String** |  |  [optional]
+**sqliteVersion** | **String** |  |  [optional]
+**migrationVersion** | **Integer** |  |  [optional]
+**urlBase** | **String** |  |  [optional]
+**runtimeVersion** | **String** |  |  [optional]
+**runtimeName** | **String** |  |  [optional]
+**startTime** | **String** |  |  [optional]
+**packageUpdateMechanism** | **String** |  |  [optional]
