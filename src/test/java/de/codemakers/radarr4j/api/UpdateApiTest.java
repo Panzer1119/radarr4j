@@ -19,7 +19,7 @@ public class UpdateApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(UpdateApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(UpdateApi.class);
     }
 
 

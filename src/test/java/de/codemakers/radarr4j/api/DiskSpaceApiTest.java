@@ -18,7 +18,7 @@ public class DiskSpaceApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(DiskSpaceApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(DiskSpaceApi.class);
     }
 
 

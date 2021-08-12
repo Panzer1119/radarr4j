@@ -18,7 +18,7 @@ public class HealthApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(HealthApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(HealthApi.class);
     }
 
 

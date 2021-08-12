@@ -19,7 +19,7 @@ public class DownloadClientApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(DownloadClientApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(DownloadClientApi.class);
     }
 
 

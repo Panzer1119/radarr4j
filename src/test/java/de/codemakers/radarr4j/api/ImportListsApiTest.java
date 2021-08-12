@@ -19,7 +19,7 @@ public class ImportListsApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(ImportListsApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(ImportListsApi.class);
     }
 
 

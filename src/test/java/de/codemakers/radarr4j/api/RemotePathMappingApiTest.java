@@ -19,7 +19,7 @@ public class RemotePathMappingApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(RemotePathMappingApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(RemotePathMappingApi.class);
     }
 
 

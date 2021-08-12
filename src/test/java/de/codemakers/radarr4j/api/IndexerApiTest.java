@@ -20,7 +20,7 @@ public class IndexerApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(IndexerApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(IndexerApi.class);
     }
 
 

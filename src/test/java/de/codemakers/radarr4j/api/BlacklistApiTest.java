@@ -21,7 +21,7 @@ public class BlacklistApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(BlacklistApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(BlacklistApi.class);
     }
 
 

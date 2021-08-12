@@ -18,7 +18,7 @@ public class CalendarApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(CalendarApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(CalendarApi.class);
     }
 
 

@@ -21,7 +21,7 @@ public class MovieApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(MovieApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(MovieApi.class);
     }
 
 

@@ -19,7 +19,7 @@ public class CustomFiltersApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(CustomFiltersApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(CustomFiltersApi.class);
     }
 
 

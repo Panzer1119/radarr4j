@@ -19,7 +19,7 @@ public class MovieFileApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(MovieFileApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(MovieFileApi.class);
     }
 
 

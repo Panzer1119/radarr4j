@@ -20,7 +20,7 @@ public class HistoryApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(HistoryApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(HistoryApi.class);
     }
 
 

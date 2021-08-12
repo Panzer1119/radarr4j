@@ -19,7 +19,7 @@ public class QualityApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(QualityApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(QualityApi.class);
     }
 
 

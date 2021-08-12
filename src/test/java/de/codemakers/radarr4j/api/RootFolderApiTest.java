@@ -18,7 +18,7 @@ public class RootFolderApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(RootFolderApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(RootFolderApi.class);
     }
 
 

@@ -20,7 +20,7 @@ public class TagApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(TagApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(TagApi.class);
     }
 
 

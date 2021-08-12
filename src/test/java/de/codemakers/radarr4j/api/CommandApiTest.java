@@ -19,7 +19,7 @@ public class CommandApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(CommandApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(CommandApi.class);
     }
 
 

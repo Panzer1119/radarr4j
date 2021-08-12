@@ -24,7 +24,7 @@ public class SettingsApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(SettingsApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(SettingsApi.class);
     }
 
 

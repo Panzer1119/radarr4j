@@ -19,7 +19,7 @@ public class NotificationApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(NotificationApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(NotificationApi.class);
     }
 
 

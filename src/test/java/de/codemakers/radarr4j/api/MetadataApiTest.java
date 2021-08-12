@@ -19,7 +19,7 @@ public class MetadataApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(MetadataApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(MetadataApi.class);
     }
 
 

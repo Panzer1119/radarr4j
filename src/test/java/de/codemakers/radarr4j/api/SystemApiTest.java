@@ -19,7 +19,7 @@ public class SystemApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(SystemApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(SystemApi.class);
     }
 
 

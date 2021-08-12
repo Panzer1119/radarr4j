@@ -21,7 +21,7 @@ public class QueueApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient().createService(QueueApi.class);
+        api = new ApiClient(TestUtil.TEST_HOST).createService(QueueApi.class);
     }
 
 
