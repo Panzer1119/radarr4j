@@ -31,7 +31,6 @@ import java.util.List;
  * Blacklist
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-12T01:48:34.579+02:00[Europe/Berlin]")
 public class Blacklist {
   @SerializedName("movieId")
   private BigDecimal movieId = null;

@@ -31,7 +31,6 @@ import java.util.List;
  * History
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-12T01:48:34.579+02:00[Europe/Berlin]")
 public class History {
   @SerializedName("movieId")
   private BigDecimal movieId = null;

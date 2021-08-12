@@ -28,7 +28,6 @@ import java.util.List;
  * InlineResponse2006
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2021-08-12T01:48:34.579+02:00[Europe/Berlin]")
 public class InlineResponse2006 {
   @SerializedName("page")
   private Integer page = null;
