@@ -20,7 +20,7 @@ Delete a download client by database id
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -73,7 +73,7 @@ Get a list of all the download clients added in Radarr
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -128,7 +128,7 @@ Get a single download client by database id
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -187,7 +187,7 @@ Edit a downloadclient by database id
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;

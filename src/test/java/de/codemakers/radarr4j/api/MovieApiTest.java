@@ -1,16 +1,13 @@
 package de.codemakers.radarr4j.api;
 
-import de.codemakers.radarr4j.invoker.ApiClient;
+import de.codemakers.radarr4j.invoker.RadarrApiClient;
 import de.codemakers.radarr4j.model.Movie;
 import de.codemakers.radarr4j.model.MovieEditorBody;
 import de.codemakers.radarr4j.model.MovieEditorBody1;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * API tests for MovieApi
@@ -21,7 +18,7 @@ public class MovieApiTest {
 
     @Before
     public void setup() {
-        api = new ApiClient(TestUtil.TEST_HOST).createService(MovieApi.class);
+        api = new RadarrApiClient(TestUtil.TEST_HOST).createService(MovieApi.class);
     }
 
 

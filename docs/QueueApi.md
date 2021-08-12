@@ -22,7 +22,7 @@ Remove multiple items from queue by their ids
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -85,7 +85,7 @@ Remove an item from the queue and optionally blacklist it
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -148,7 +148,7 @@ Return a json object list of items in the queue
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -215,7 +215,7 @@ Get details of all items in queue
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -274,7 +274,7 @@ Stats on items in queue
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -329,7 +329,7 @@ Perform a Radarr \&quot;force grab\&quot; on a pending queue item by its ID.
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;

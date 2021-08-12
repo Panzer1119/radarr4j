@@ -20,7 +20,7 @@ Removes a specific release (the id provided) from the blacklist
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -79,7 +79,7 @@ Delete blacklisted releases in bulk
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -132,7 +132,7 @@ Returns blacklisted releases
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -191,7 +191,7 @@ Retrieves blacklisted releases that are tied to a given movie in the database
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;

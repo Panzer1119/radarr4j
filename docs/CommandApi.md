@@ -17,7 +17,7 @@ Pushes commands to Radarr using a key:value pair. The main key is \&quot;name\&q
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;

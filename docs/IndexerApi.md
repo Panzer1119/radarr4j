@@ -20,7 +20,7 @@ Delete Indexer by database id
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -79,7 +79,7 @@ Get all indexers
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -134,7 +134,7 @@ Get Indexer by its database Id
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;
@@ -191,7 +191,7 @@ Edit an Indexer
 ### Example
 ```java
 // Import classes:
-//import de.codemakers.radarr4j.invoker.ApiClient;
+//import de.codemakers.radarr4j.invoker.RadarrApiClient;
 //import de.codemakers.radarr4j.invoker.ApiException;
 //import de.codemakers.radarr4j.invoker.Configuration;
 //import de.codemakers.radarr4j.invoker.auth.*;

@@ -2,7 +2,6 @@ package de.codemakers.radarr4j.invoker;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParseException;
-import com.google.gson.JsonElement;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.RequestBody;
@@ -17,7 +16,6 @@ import de.codemakers.radarr4j.invoker.auth.HttpBasicAuth;
 import de.codemakers.radarr4j.invoker.auth.ApiKeyAuth;
 import de.codemakers.radarr4j.invoker.auth.OAuth;
 import de.codemakers.radarr4j.invoker.auth.OAuth.AccessTokenListener;
-import de.codemakers.radarr4j.invoker.auth.OAuthFlow;
 
 import java.io.IOException;
 import java.lang.annotation.Annotation;
@@ -26,9 +24,8 @@ import java.text.DateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.HashMap;
 
-public class ApiClient {
+public class RadarrApiClient {
 
   private Map<String, Interceptor> apiAuthorizations;
   private OkHttpClient.Builder okBuilder;
@@ -39,12 +36,12 @@ public class ApiClient {
    * Basic constructor
    * @param host Host Address (including the schema)
    */
-  public ApiClient(String host) {
+  public RadarrApiClient(String host) {
     apiAuthorizations = new LinkedHashMap<String, Interceptor>();
     createAdapter(host);
   }
 
-  public ApiClient(String host, String[] authNames) {
+  public RadarrApiClient(String host, String[] authNames) {
     this(host);
     for(String authName : authNames) {
       Interceptor auth;
@@ -65,7 +62,7 @@ public class ApiClient {
    * @param host Host Address (including the schema)
    * @param authName Authentication name
    */
-  public ApiClient(String host, String authName) {
+  public RadarrApiClient(String host, String authName) {
     this(host, new String[]{authName});
   }
 
@@ -75,7 +72,7 @@ public class ApiClient {
    * @param authName Authentication name
    * @param apiKey API key
    */
-  public ApiClient(String host, String authName, String apiKey) {
+  public RadarrApiClient(String host, String authName, String apiKey) {
     this(host, authName);
     this.setApiKey(apiKey);
   }
@@ -87,7 +84,7 @@ public class ApiClient {
    * @param username Username
    * @param password Password
    */
-  public ApiClient(String host, String authName, String username, String password) {
+  public RadarrApiClient(String host, String authName, String username, String password) {
     this(host, authName);
     this.setCredentials(username,  password);
   }
@@ -101,7 +98,7 @@ public class ApiClient {
    * @param username Username
    * @param password Password
    */
-  public ApiClient(String host, String authName, String clientId, String secret, String username, String password) {
+  public RadarrApiClient(String host, String authName, String clientId, String secret, String username, String password) {
     this(host, authName);
     this.getTokenEndPoint()
       .setClientId(clientId)
@@ -132,22 +129,22 @@ public class ApiClient {
       .create(serviceClass);
   }
 
-  public ApiClient setDateFormat(DateFormat dateFormat) {
+  public RadarrApiClient setDateFormat(DateFormat dateFormat) {
     this.json.setDateFormat(dateFormat);
     return this;
   }
 
-  public ApiClient setSqlDateFormat(DateFormat dateFormat) {
+  public RadarrApiClient setSqlDateFormat(DateFormat dateFormat) {
     this.json.setSqlDateFormat(dateFormat);
     return this;
   }
 
-  public ApiClient setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
+  public RadarrApiClient setOffsetDateTimeFormat(DateTimeFormatter dateFormat) {
     this.json.setOffsetDateTimeFormat(dateFormat);
     return this;
   }
 
-  public ApiClient setLocalDateFormat(DateTimeFormatter dateFormat) {
+  public RadarrApiClient setLocalDateFormat(DateTimeFormatter dateFormat) {
     this.json.setLocalDateFormat(dateFormat);
     return this;
   }
@@ -158,7 +155,7 @@ public class ApiClient {
    * @param apiKey API key
    * @return ApiClient
    */
-  public ApiClient setApiKey(String apiKey) {
+  public RadarrApiClient setApiKey(String apiKey) {
     for(Interceptor apiAuthorization : apiAuthorizations.values()) {
       if (apiAuthorization instanceof ApiKeyAuth) {
         ApiKeyAuth keyAuth = (ApiKeyAuth) apiAuthorization;
@@ -175,7 +172,7 @@ public class ApiClient {
    * @param password Password
    * @return ApiClient
    */
-  public ApiClient setCredentials(String username, String password) {
+  public RadarrApiClient setCredentials(String username, String password) {
     for(Interceptor apiAuthorization : apiAuthorizations.values()) {
       if (apiAuthorization instanceof HttpBasicAuth) {
         HttpBasicAuth basicAuth = (HttpBasicAuth) apiAuthorization;
@@ -224,7 +221,7 @@ public class ApiClient {
    * @param accessToken Access token
    * @return ApiClient
    */
-  public ApiClient setAccessToken(String accessToken) {
+  public RadarrApiClient setAccessToken(String accessToken) {
     for(Interceptor apiAuthorization : apiAuthorizations.values()) {
       if (apiAuthorization instanceof OAuth) {
         OAuth oauth = (OAuth) apiAuthorization;
@@ -242,7 +239,7 @@ public class ApiClient {
    * @param redirectURI Redirect URI
    * @return ApiClient
    */
-  public ApiClient configureAuthorizationFlow(String clientId, String clientSecret, String redirectURI) {
+  public RadarrApiClient configureAuthorizationFlow(String clientId, String clientSecret, String redirectURI) {
     for(Interceptor apiAuthorization : apiAuthorizations.values()) {
       if (apiAuthorization instanceof OAuth) {
         OAuth oauth = (OAuth) apiAuthorization;
@@ -264,7 +261,7 @@ public class ApiClient {
    * @param accessTokenListener Access token listener
    * @return ApiClient
    */
-  public ApiClient registerAccessTokenListener(AccessTokenListener accessTokenListener) {
+  public RadarrApiClient registerAccessTokenListener(AccessTokenListener accessTokenListener) {
     for(Interceptor apiAuthorization : apiAuthorizations.values()) {
       if (apiAuthorization instanceof OAuth) {
         OAuth oauth = (OAuth) apiAuthorization;
@@ -281,7 +278,7 @@ public class ApiClient {
    * @param authorization Authorization interceptor
    * @return ApiClient
    */
-  public ApiClient addAuthorization(String authName, Interceptor authorization) {
+  public RadarrApiClient addAuthorization(String authName, Interceptor authorization) {
     if (apiAuthorizations.containsKey(authName)) {
       throw new RuntimeException("auth name \"" + authName + "\" already in api authorizations");
     }
@@ -294,7 +291,7 @@ public class ApiClient {
     return apiAuthorizations;
   }
 
-  public ApiClient setApiAuthorizations(Map<String, Interceptor> apiAuthorizations) {
+  public RadarrApiClient setApiAuthorizations(Map<String, Interceptor> apiAuthorizations) {
     this.apiAuthorizations = apiAuthorizations;
     return this;
   }
@@ -303,7 +300,7 @@ public class ApiClient {
     return adapterBuilder;
   }
 
-  public ApiClient setAdapterBuilder(Retrofit.Builder adapterBuilder) {
+  public RadarrApiClient setAdapterBuilder(Retrofit.Builder adapterBuilder) {
     this.adapterBuilder = adapterBuilder;
     return this;
   }
