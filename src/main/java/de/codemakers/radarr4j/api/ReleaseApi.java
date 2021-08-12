@@ -6,6 +6,8 @@ import retrofit2.Call;
 import retrofit2.http.Headers;
 import retrofit2.http.POST;
 
+import java.util.List;
+
 public interface ReleaseApi {
     
     /**
@@ -17,6 +19,6 @@ public interface ReleaseApi {
      */
     @Headers( {"Content-Type:application/json"})
     @POST("release/push")
-    Call<ReleasePushResponse> pushRelease(@retrofit2.http.Body ReleasePush body);
+    Call<List<ReleasePushResponse>> pushRelease(@retrofit2.http.Body ReleasePush body);
     
 }
