@@ -34,7 +34,7 @@ After the client library is installed/deployed, you can use it in your Maven pro
 <dependency>
     <groupId>de.codemakers</groupId>
     <artifactId>radarr4j</artifactId>
-    <version>3.0.1</version>
+    <version>3.0.2</version>
     <scope>compile</scope>
 </dependency>
 
