@@ -15,6 +15,10 @@
       "updater": "xml-version-updater.js"
     },
     {
+      "filename": "README.md",
+      "updater": "gradle-version-updater.js"
+    },
+    {
       "filename": "sonar-project.properties",
       "updater": "sonar-version-updater.js"
     }
