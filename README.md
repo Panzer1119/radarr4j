@@ -32,7 +32,7 @@ After the client library is installed/deployed, you can use it in your Maven pro
 <dependency>
     <groupId>de.codemakers</groupId>
     <artifactId>radarr4j</artifactId>
-    <version>3.0.6</version>
+    <version>3.1.0</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -40,7 +40,7 @@ After the client library is installed/deployed, you can use it in your Maven pro
 Or to your *build.gradle*:
 
 ```groovy
-implementation group: "de.codemakers", name: "radarr4j", version: "3.0.6"
+implementation group: "de.codemakers", name: "radarr4j", version: "3.1.0"
 ```
 
 ## Author
