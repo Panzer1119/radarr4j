@@ -1,5 +1,11 @@
 # radarr4j
 
+> **WARNING**: This is Work in Progress
+> 
+> Technically this Library is functional, but not completely finished and breaking changes could come any time!
+> 
+> The automatic generated Documentation is also not 100% correct or working!
+
 ## Requirements
 
 Building the API client library requires [Maven](https://maven.apache.org/) to be installed.
@@ -21,6 +27,8 @@ mvn deploy
 Refer to the [official documentation](https://maven.apache.org/plugins/maven-deploy-plugin/usage.html) for more information.
 
 After the client library is installed/deployed, you can use it in your Maven project by adding the following to your *pom.xml*:
+
+> **WARNING**: This Package does not exist yet
 
 ```xml
 <dependency>
