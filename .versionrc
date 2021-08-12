@@ -11,10 +11,6 @@
       "type": "gradle"
     },
     {
-      "filename": "pom.xml",
-      "updater": "xml-version-updater.js"
-    },
-    {
       "filename": "README.md",
       "updater": "xml-version-updater.js"
     },
