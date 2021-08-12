@@ -1,12 +1,17 @@
 plugins {
     id 'java-library'
+    id "org.sonarqube" version "3.3"
+    id "com.github.johnrengelman.shadow" version "7.0.0"
+    id "com.github.ben-manes.versions" version "0.39.0"
+    id 'signing'
+    id 'maven-publish'
 }
 
 group = 'de.codemakers'
 version = '3.0.2'
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 ext {
@@ -30,7 +35,98 @@ dependencies {
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-task execute(type: JavaExec) {
-    main = System.getProperty('mainClass')
-    classpath = sourceSets.main.runtimeClasspath
+test {
+    useJUnitPlatform()
+}
+
+shadowJar {
+    getDestinationDirectory().set(new File(projectDir, "./dist"))
+}
+
+javadoc {
+    if (JavaVersion.current().isJava9Compatible()) {
+        options.addBooleanOption('html5', true)
+    }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = 'radarr4j'
+            from components.java
+            //artifact shadowJar
+            versionMapping {
+                usage('java-api') {
+                    fromResolutionOf('runtimeClasspath')
+                }
+                usage('java-runtime') {
+                    fromResolutionResult()
+                }
+            }
+            pom {
+                name = 'radarr4j'
+                description = 'Java Client Library for the Radarr API v3'
+                url = 'https://github.com/Panzer1119/radarr4j'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'panzer1119'
+                        name = 'Paul Hagedorn'
+                        email = 'panzer1119@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/Panzer1119/radarr4j")
+            credentials {
+                username = "Panzer1119"
+                password = System.getenv("GITHUB_TOKEN")
+            }
+        }
+        maven {
+            name = "customRepository"
+            def releasesRepoUrl = System.getenv("MAVEN_URL_RELEASES")
+            def snapshotsRepoUrl = System.getenv("MAVEN_URL_SNAPSHOTS")
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+            credentials {
+                username = System.getenv("MAVEN_USERNAME")
+                password = System.getenv("MAVEN_PASSWORD")
+            }
+        }
+    }
+}
+
+def hasSigningKey = project.hasProperty("signingKeyId") || project.hasProperty("signingKey")
+
+if (hasSigningKey) {
+    sign(project)
+}
+
+void sign(Project project) {
+    project.signing {
+        required { project.gradle.taskGraph.hasTask("required") }
+        def signingKeyId = project.findProperty("signingKeyId")
+        def signingKey = project.findProperty("signingKey")
+        def signingPassword = project.findProperty("signingPassword")
+        if (signingKeyId) {
+            useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+        } else if (signingKey) {
+            useInMemoryPgpKeys(signingKey, signingPassword)
+        }
+        sign publishing.publications.mavenJava
+    }
 }
