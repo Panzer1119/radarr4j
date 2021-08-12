@@ -2,8 +2,8 @@ package de.codemakers.radarr4j.api;
 
 import de.codemakers.radarr4j.invoker.RadarrApiClient;
 import de.codemakers.radarr4j.model.Tag;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * API tests for TagApi
@@ -12,7 +12,7 @@ public class TagApiTest {
 
     private TagApi api;
 
-    @Before
+    @BeforeEach
     public void setup() {
         api = new RadarrApiClient(TestUtil.TEST_HOST).createService(TagApi.class);
     }

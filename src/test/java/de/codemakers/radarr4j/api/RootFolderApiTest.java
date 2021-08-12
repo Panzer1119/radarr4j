@@ -1,8 +1,8 @@
 package de.codemakers.radarr4j.api;
 
 import de.codemakers.radarr4j.invoker.RadarrApiClient;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * API tests for RootFolderApi
@@ -11,7 +11,7 @@ public class RootFolderApiTest {
 
     private RootFolderApi api;
 
-    @Before
+    @BeforeEach
     public void setup() {
         api = new RadarrApiClient(TestUtil.TEST_HOST).createService(RootFolderApi.class);
     }

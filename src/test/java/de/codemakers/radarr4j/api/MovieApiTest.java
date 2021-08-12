@@ -4,8 +4,8 @@ import de.codemakers.radarr4j.invoker.RadarrApiClient;
 import de.codemakers.radarr4j.model.Movie;
 import de.codemakers.radarr4j.model.MovieEditorBody;
 import de.codemakers.radarr4j.model.MovieEditorBody1;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public class MovieApiTest {
 
     private MovieApi api;
 
-    @Before
+    @BeforeEach
     public void setup() {
         api = new RadarrApiClient(TestUtil.TEST_HOST).createService(MovieApi.class);
     }

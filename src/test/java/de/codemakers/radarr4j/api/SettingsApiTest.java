@@ -4,8 +4,8 @@ import de.codemakers.radarr4j.invoker.RadarrApiClient;
 import de.codemakers.radarr4j.model.ConfigHostBody;
 import de.codemakers.radarr4j.model.ConfigNamingBody;
 import de.codemakers.radarr4j.model.ConfigUiBody;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 /**
  * API tests for SettingsApi
@@ -14,7 +14,7 @@ public class SettingsApiTest {
 
     private SettingsApi api;
 
-    @Before
+    @BeforeEach
     public void setup() {
         api = new RadarrApiClient(TestUtil.TEST_HOST).createService(SettingsApi.class);
     }
