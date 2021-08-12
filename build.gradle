@@ -32,8 +32,9 @@ dependencies {
     testImplementation "junit:junit:$junit_version"
 }
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+compileJava {
+    options.release = 16
+}
 
 test {
     useJUnitPlatform()
