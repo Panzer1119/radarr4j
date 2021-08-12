@@ -1,0 +1,22 @@
+{
+  "packageFiles": [
+    {
+      "filename": "build.gradle",
+      "type": "gradle"
+    }
+  ],
+  "bumpFiles": [
+    {
+      "filename": "build.gradle",
+      "type": "gradle"
+    },
+    {
+      "filename": "pom.xml",
+      "updater": "xml-version-updater.js"
+    },
+    {
+      "filename": "README.md",
+      "updater": "xml-version-updater.js"
+    }
+  ]
+}
