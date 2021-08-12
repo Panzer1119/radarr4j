@@ -6,7 +6,7 @@ import java.util.Objects;
 public class ReleasePushResponse {
     
     private String guid;
-    private QualityQuality quality;
+    private Quality quality;
     private List<CustomFormat> customFormats;
     private int customFormatScore;
     private int qualityWeight;
@@ -37,7 +37,7 @@ public class ReleasePushResponse {
     public ReleasePushResponse() {
     }
     
-    public ReleasePushResponse(String guid, QualityQuality quality, List<CustomFormat> customFormats, int customFormatScore, int qualityWeight, int age, double ageHours, double ageMinutes, int size, int indexerId, String releaseHash, String title, boolean sceneSource, String movieTitle, List<Language> languages, boolean approved, boolean temporarilyRejected, boolean rejected, int tmdbId, int imdbId, List<String> rejections, String publishDate, String downloadUrl, boolean downloadAllowed, int releaseWeight, List<Object> indexerFlags, String edition, String protocol) {
+    public ReleasePushResponse(String guid, Quality quality, List<CustomFormat> customFormats, int customFormatScore, int qualityWeight, int age, double ageHours, double ageMinutes, int size, int indexerId, String releaseHash, String title, boolean sceneSource, String movieTitle, List<Language> languages, boolean approved, boolean temporarilyRejected, boolean rejected, int tmdbId, int imdbId, List<String> rejections, String publishDate, String downloadUrl, boolean downloadAllowed, int releaseWeight, List<Object> indexerFlags, String edition, String protocol) {
         this.guid = guid;
         this.quality = quality;
         this.customFormats = customFormats;
@@ -77,11 +77,11 @@ public class ReleasePushResponse {
         return this;
     }
     
-    public QualityQuality getQuality() {
+    public Quality getQuality() {
         return quality;
     }
     
-    public ReleasePushResponse setQuality(QualityQuality quality) {
+    public ReleasePushResponse setQuality(Quality quality) {
         this.quality = quality;
         return this;
     }
