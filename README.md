@@ -28,8 +28,6 @@ Refer to the [official documentation](https://maven.apache.org/plugins/maven-dep
 
 After the client library is installed/deployed, you can use it in your Maven project by adding the following to your *pom.xml*:
 
-> **WARNING**: This Package does not exist yet
-
 ```xml
 <dependency>
     <groupId>de.codemakers</groupId>
@@ -37,7 +35,12 @@ After the client library is installed/deployed, you can use it in your Maven pro
     <version>3.0.5</version>
     <scope>compile</scope>
 </dependency>
+```
 
+Or to your *build.gradle*:
+
+```groovy
+implementation group: "de.codemakers", name: "radarr4j", version: "3.0.5"
 ```
 
 ## Author
