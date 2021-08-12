@@ -34,14 +34,18 @@ public class ApiClient {
   private OkHttpClient.Builder okBuilder;
   private Retrofit.Builder adapterBuilder;
   private JSON json;
-
-  public ApiClient() {
+  
+  /**
+   * Basic constructor
+   * @param host Host Address (including the schema)
+   */
+  public ApiClient(String host) {
     apiAuthorizations = new LinkedHashMap<String, Interceptor>();
-    createDefaultAdapter();
+    createAdapter(host);
   }
 
-  public ApiClient(String[] authNames) {
-    this();
+  public ApiClient(String host, String[] authNames) {
+    this(host);
     for(String authName : authNames) {
       Interceptor auth;
       if ("X-API-Key".equals(authName)) {
@@ -58,43 +62,47 @@ public class ApiClient {
 
   /**
    * Basic constructor for single auth name
+   * @param host Host Address (including the schema)
    * @param authName Authentication name
    */
-  public ApiClient(String authName) {
-    this(new String[]{authName});
+  public ApiClient(String host, String authName) {
+    this(host, new String[]{authName});
   }
 
   /**
    * Helper constructor for single api key
+   * @param host Host Address (including the schema)
    * @param authName Authentication name
    * @param apiKey API key
    */
-  public ApiClient(String authName, String apiKey) {
-    this(authName);
+  public ApiClient(String host, String authName, String apiKey) {
+    this(host, authName);
     this.setApiKey(apiKey);
   }
 
   /**
    * Helper constructor for single basic auth or password oauth2
+   * @param host Host Address (including the schema)
    * @param authName Authentication name
    * @param username Username
    * @param password Password
    */
-  public ApiClient(String authName, String username, String password) {
-    this(authName);
+  public ApiClient(String host, String authName, String username, String password) {
+    this(host, authName);
     this.setCredentials(username,  password);
   }
 
   /**
    * Helper constructor for single password oauth2
+   * @param host Host Address (including the schema)
    * @param authName Authentication name
    * @param clientId Client ID
    * @param secret Client Secret
    * @param username Username
    * @param password Password
    */
-  public ApiClient(String authName, String clientId, String secret, String username, String password) {
-    this(authName);
+  public ApiClient(String host, String authName, String clientId, String secret, String username, String password) {
+    this(host, authName);
     this.getTokenEndPoint()
       .setClientId(clientId)
       .setClientSecret(secret)
@@ -102,11 +110,11 @@ public class ApiClient {
       .setPassword(password);
   }
 
-  public void createDefaultAdapter() {
+  public void createAdapter(String host) {
     json = new JSON();
     okBuilder = new OkHttpClient.Builder();
 
-    String baseUrl = "{protocol}://{hostPath}/api/v3";
+    String baseUrl = String.format("%s/api/v3", host);
     if (!baseUrl.endsWith("/"))
       baseUrl = baseUrl + "/";
 
