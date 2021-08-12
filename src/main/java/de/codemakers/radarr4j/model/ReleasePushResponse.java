@@ -1,6 +1,5 @@
 package de.codemakers.radarr4j.model;
 
-import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -27,7 +26,7 @@ public class ReleasePushResponse {
     private int tmdbId;
     private int imdbId;
     private List<String> rejections;
-    private ZonedDateTime publishDate;
+    private String publishDate;
     private String downloadUrl;
     private boolean downloadAllowed;
     private int releaseWeight;
@@ -38,7 +37,7 @@ public class ReleasePushResponse {
     public ReleasePushResponse() {
     }
     
-    public ReleasePushResponse(String guid, QualityQuality quality, List<CustomFormat> customFormats, int customFormatScore, int qualityWeight, int age, double ageHours, double ageMinutes, int size, int indexerId, String releaseHash, String title, boolean sceneSource, String movieTitle, List<Language> languages, boolean approved, boolean temporarilyRejected, boolean rejected, int tmdbId, int imdbId, List<String> rejections, ZonedDateTime publishDate, String downloadUrl, boolean downloadAllowed, int releaseWeight, List<Object> indexerFlags, String edition, String protocol) {
+    public ReleasePushResponse(String guid, QualityQuality quality, List<CustomFormat> customFormats, int customFormatScore, int qualityWeight, int age, double ageHours, double ageMinutes, int size, int indexerId, String releaseHash, String title, boolean sceneSource, String movieTitle, List<Language> languages, boolean approved, boolean temporarilyRejected, boolean rejected, int tmdbId, int imdbId, List<String> rejections, String publishDate, String downloadUrl, boolean downloadAllowed, int releaseWeight, List<Object> indexerFlags, String edition, String protocol) {
         this.guid = guid;
         this.quality = quality;
         this.customFormats = customFormats;
@@ -258,11 +257,11 @@ public class ReleasePushResponse {
         return this;
     }
     
-    public ZonedDateTime getPublishDate() {
+    public String getPublishDate() {
         return publishDate;
     }
     
-    public ReleasePushResponse setPublishDate(ZonedDateTime publishDate) {
+    public ReleasePushResponse setPublishDate(String publishDate) {
         this.publishDate = publishDate;
         return this;
     }
