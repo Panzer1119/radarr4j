@@ -5,7 +5,7 @@
   <artifactId>radarr4j</artifactId>
   <packaging>jar</packaging>
   <name>radarr4j</name>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <url>https://github.com/Panzer1119/radarr4j.git</url>
   <description>Java Client Library for the Radarr API v3</description>
   <scm>
